@@ -1,0 +1,17 @@
+
+#访问静态资源的时候 增加前缀
+#spring:
+#  mvc:
+#    static-path-pattern: /res/**
+#      //增加前缀会导致欢迎页失效   也会导致favicon 功能失效
+#改变静态资源默认的路径
+#  web:
+#    resources:
+#      static-locations: classpath:/haha
+
+#REST手动开启
+spring:
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true

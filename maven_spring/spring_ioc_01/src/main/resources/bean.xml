@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+<!--    bean生命周期的演示 在xml文档中 设置 销毁方法  和初始化方法-->
+    <bean id="order" class="com.chao.hu.Order" init-method="init" destroy-method="destroy" >
+<property name="oname" value="我是男神"></property>
+    </bean>
+
+<!--    有后置处理器要创建对象  此xml文档中所有创建的对象 都会使用此后置处理器-->
+
+    <bean id="myBeanPost" class="com.chao.hu.MyBeanPost"></bean>
+
+
+
+
+
+
+
+
+
+<!--    自动装配
+实现自动装配
+ bean 标签属性 autowire，配置自动装配
+ autowire 属性常用两个值：
+ byName 根据属性名称注入 ，注入值 bean 的 id 值和类属性名称一样
+ byType 根据属性类型注入
+
+
+    原始方式
+    <bean id="emp" class="com.atguigu.spring5.autowire.Emp" autowire="byName">
+        <property name="dept" ref="dept"></property>
+    </bean>
+    <bean id="dept" class="com.atguigu.spring5.autowire.Dept"></bean>
+
+
+       使用自动装配
+    <bean id="emp" class="com.atguigu.spring5.autowire.Emp" autowire="byName">
+    </bean>
+    <bean id="dept" class="com.atguigu.spring5.autowire.Dept"></bean>
+
+
+
+-->
+
+
+
+
+
+
+
+</beans>
